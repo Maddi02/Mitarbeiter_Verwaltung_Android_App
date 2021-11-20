@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Sachbearbeiterverwaltung</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string-array name="usernames">
+         <item>Martin</item>
+         <item>Nikas</item>
+         <item>Timo</item>
+         <item>Malte</item>
+         <item>Andi</item>
+         <item>leon</item>
+</string-array>
+
+
+    <string-array name="Fortbildungen">
+        <item>Mathe 1</item>
+        <item>Mathe 2</item>
+        <item>Kostenrechnung</item>
+        <item>BWL</item>
+    </string-array>
+
+
+
+</resources>

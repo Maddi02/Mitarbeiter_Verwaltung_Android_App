@@ -1,0 +1,68 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Entitätsklassen.ExterneSchnittstellen.AdminSachbearbeiterErstellen"
+    android:background="@drawable/background">
+
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/SachbearbeiteroldName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="old Username">
+        </TextView>
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinnerUsername"
+            android:layout_below="@+id/SachbearbeiteroldName"
+            ></Spinner>
+
+        <fragment
+            android:id="@+id/SachbearbeiterName"
+            android:name="com.example.framenttest_2.Entitätsklassen.ExterneSchnittstellen.SachbearbeiterNameS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/spinnerUsername"
+            android:layout_weight="0"/>
+
+        <fragment
+            android:id="@+id/SachbearbeiterPassword"
+            android:name="com.example.framenttest_2.Entitätsklassen.ExterneSchnittstellen.SachbearbeiterPasswordS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/SachbearbeiterName"
+            android:layout_weight="0" />
+
+        <fragment
+            android:id="@+id/SachbearbeiterBerechtigungen"
+            android:name="com.example.framenttest_2.Entitätsklassen.ExterneSchnittstellen.SachbearbeiterBerechtigungS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/SachbearbeiterPassword"
+            android:layout_weight="0" />
+
+        <fragment
+            android:id="@+id/SachbearbeiterOkButton"
+            android:name="com.example.framenttest_2.Entitätsklassen.ExterneSchnittstellen.SachbearbeiterOKKnopfS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/SachbearbeiterPassword"
+            android:layout_weight="0" />
+    </RelativeLayout>
+
+
+
+
+</LinearLayout>

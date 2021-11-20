@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.26356487426770675" />
+        <entry key="app/src/main/res/layout/admin_sachbearbeiter_editieren_aas.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/admin_sachbearbeiter_erstellen_aas.xml" value="0.23020833333333332" />
+        <entry key="app/src/main/res/layout/admin_sachbearbeiter_loeschen_ass.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_first_fragement.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_sachbearbeiter_name_s.xml" value="0.34934497816593885" />
+        <entry key="app/src/main/res/layout/fragment_second.xml" value="0.20969202898550723" />
+        <entry key="app/src/main/res/layout/fragment_test.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/sacharbeiter_fortbildung_zuweisen_aas.xml" value="0.23020833333333332" />
+        <entry key="app/src/main/res/layout/sachbearbeiter_fortbildung_loeschen.xml" value="0.23020833333333332" />
+        <entry key="app/src/main/res/layout/sachbearbeiter_name.xml" value="0.33402922755741127" />
+        <entry key="app/src/main/res/layout/sachbearbeiter_name_s.xml" value="0.24003623188405798" />
+        <entry key="app/src/main/res/layout/sachbearbeiter_ok_knopf.xml" value="0.11774638315468453" />
+        <entry key="app/src/main/res/layout/sachbearbeiter_sachbearbeiter_editieren.xml" value="0.24003623188405798" />
+        <entry key="app/src/main/res/layout/sachbearbeiter_verwaltung_hs.xml" value="0.23020833333333332" />
+        <entry key="app/src/main/res/layout/sachbearbeiters_berechtigung_s.xml" value="0.23020833333333332" />
+        <entry key="app/src/main/res/layout/sachbearbeiters_password_s.xml" value="0.2635416666666667" />
+        <entry key="app/src/main/res/menu/admin_menu.xml" value="0.2635416666666667" />
+        <entry key="app/src/main/res/menu/sachbearbeiter_menu.xml" value="0.23020833333333332" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

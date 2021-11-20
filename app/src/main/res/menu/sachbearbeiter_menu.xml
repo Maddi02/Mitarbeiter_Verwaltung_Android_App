@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item android:title="Sachbearbeiter editieren"
+        android:id="@+id/SachbeabeiterEditerenButtonMenu"
+        app:showAsAction="never" />
+
+    <item android:title="Fortbildungzuordnung anpassen"
+        android:id="@+id/SachbeabeiterFortbbildungZuordnenButtonMenu"
+        app:showAsAction="never"/>
+
+    <item android:title="Fortbildungzuordnung löschen"
+        android:id="@+id/SachbeabeiterFortbbildungLöschenButtonMenu"
+        app:showAsAction="never"/>
+
+    <item android:title="Log out"
+        android:id="@+id/Ausloggen"
+        app:showAsAction="ifRoom"/>
+</menu>

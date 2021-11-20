@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/FrameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".Entitätsklassen.ExterneSchnittstellen.AdminAS">
+
+
+
+    <TableRow
+        android:id="@+id/Frament1"
+        android:layout_width="240dp"
+        android:layout_height="40dp">
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/Frament2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </TableRow>
+
+
+</TableLayout>
