@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
@@ -66,10 +67,22 @@ public class AdminSachbearbeiterErstellen extends Fragment {
                     role = "Sachbearbeiter";
                 }
                 hilfsfunktionenK.transferAnwendungsschicht(username.getText().toString(),password.getText().toString(), role );
-                adminErstellenSachbearbeiterK.insert();
-                hilfsfunktionenK.transfere(username.getText().toString(),null,null,null,null,null,null,null,null);
-                sachbearbeiterSachbearbeiterFortbildungZuordnenK.insert();
+                if(hilfsfunktionenK.checkIfUsernameIsValid(username.getText().toString()))
+                {
+                    if(hilfsfunktionenK.checkIfNutzerExist(username.getText().toString())) {
+                        adminErstellenSachbearbeiterK.insert();
+                        hilfsfunktionenK.transfere(username.getText().toString(), null, null, null, null, null, null, null, null);
+                        sachbearbeiterSachbearbeiterFortbildungZuordnenK.insert();
+                        Toast.makeText(getContext(),"Bentzer wurde erflogreich angelegt",Toast.LENGTH_SHORT ).show();
+                    }
+                    else{
+                        Toast.makeText(getContext(),"Bentzer konnte nicht angelegt werden",Toast.LENGTH_SHORT ).show();
+                    }
 
+                }
+                else{
+                    Toast.makeText(getContext(),"Kein valider Nutzername",Toast.LENGTH_SHORT ).show();
+                }
 
             }
         });

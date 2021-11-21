@@ -24,66 +24,66 @@ public class LehrVeranstaltungHS extends AppCompatActivity {
     private String usernameAusDerDatenbank;
     private String roleAusDerDatenbank;
     private static RadioButton adminRadio;
+    MaterialButton loginButton;
     DatabaseHelperAlleFortbildungen databaseHelperAlleFortbildungen;
     DatabaseHelperSacharbeiterVerwaltung sacharbeiterVerwaltung;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
         hilfsfunktionenK = new HilfsfunktionenK(this);
         hilfsfunktionenK.open();
 
         super.onCreate(savedInstanceState);
 
-         sacharbeiterVerwaltung = new DatabaseHelperSacharbeiterVerwaltung(this);
-         databaseHelperAlleFortbildungen = new DatabaseHelperAlleFortbildungen(this);
+        sacharbeiterVerwaltung = new DatabaseHelperSacharbeiterVerwaltung(this);
+        databaseHelperAlleFortbildungen = new DatabaseHelperAlleFortbildungen(this);
 
         setContentView(R.layout.sachbearbeiter_verwaltung_hs);
         TextView username = (TextView) findViewById(R.id.username);
-        TextView password  = (TextView) findViewById(R.id.password);
-        MaterialButton loginButton =  (MaterialButton) findViewById(R.id.loginBtn);
-         adminRadio = (RadioButton) findViewById(R.id.AdminBotton);
+        TextView password = (TextView) findViewById(R.id.password);
+        MaterialButton loginButton = (MaterialButton) findViewById(R.id.loginBtn);
+
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("Range")
             @Override
             public void onClick(View view) {
+                System.out.println("HALLO");
+                adminRadio = (RadioButton) findViewById(R.id.AdminBotton);
                 Cursor cursor = hilfsfunktionenK.gibSacharbeiter(username.getText().toString());
-                if (cursor.moveToFirst()){
+                if (cursor.moveToFirst()) {
 
-                pwAusDerDatenbank = cursor.getString(cursor.getColumnIndex("passwort"));
-                usernameAusDerDatenbank = cursor.getString(cursor.getColumnIndex("username"));
-                roleAusDerDatenbank = cursor.getString(cursor.getColumnIndex("role"));
+                    pwAusDerDatenbank = cursor.getString(cursor.getColumnIndex("passwort"));
+                    usernameAusDerDatenbank = cursor.getString(cursor.getColumnIndex("username"));
+                    roleAusDerDatenbank = cursor.getString(cursor.getColumnIndex("role"));
                 }
                 cursor.close();
                 if (username.getText().toString().equals(usernameAusDerDatenbank) && password.getText().toString().equals(pwAusDerDatenbank) && adminRadio.isChecked() && roleAusDerDatenbank.equals("Admin")) {
                     Toast.makeText(LehrVeranstaltungHS.this, "Login SUCCESSFUL", Toast.LENGTH_SHORT).show();
                     switchActivitiesAdmin();
                 }
-                    if (username.getText().toString().equals(usernameAusDerDatenbank) && password.getText().toString().equals(pwAusDerDatenbank) && !adminRadio.isChecked() && roleAusDerDatenbank.equals("Admin")) {
-                        Toast.makeText(LehrVeranstaltungHS.this, "Login SUCCESSFUL", Toast.LENGTH_SHORT).show();
-                        switchActivitiesSachbearbeiter();
-                    }
-
-                    if(username.getText().toString().equals(usernameAusDerDatenbank) && password.getText().toString().equals(pwAusDerDatenbank) && roleAusDerDatenbank.equals("Sachbearbeiter") && adminRadio.isChecked())
-                    {
-                        Toast.makeText(LehrVeranstaltungHS.this, "Sie als Sacharbeiter können Sie nicht als Admin anmelden", Toast.LENGTH_SHORT).show();
-                    }
-
-                if(username.getText().toString().equals(usernameAusDerDatenbank) && password.getText().toString().equals(pwAusDerDatenbank) && roleAusDerDatenbank.equals("Sachbearbeiter") && !adminRadio.isChecked())
-                {
+                if (username.getText().toString().equals(usernameAusDerDatenbank) && password.getText().toString().equals(pwAusDerDatenbank) && !adminRadio.isChecked() && roleAusDerDatenbank.equals("Admin")) {
                     Toast.makeText(LehrVeranstaltungHS.this, "Login SUCCESSFUL", Toast.LENGTH_SHORT).show();
                     switchActivitiesSachbearbeiter();
                 }
 
-                 else {
+                if (username.getText().toString().equals(usernameAusDerDatenbank) && password.getText().toString().equals(pwAusDerDatenbank) && roleAusDerDatenbank.equals("Sachbearbeiter") && adminRadio.isChecked()) {
+                    Toast.makeText(LehrVeranstaltungHS.this, "Sie als Sacharbeiter können Sie nicht als Admin anmelden", Toast.LENGTH_SHORT).show();
+                }
+
+                if (username.getText().toString().equals(usernameAusDerDatenbank) && password.getText().toString().equals(pwAusDerDatenbank) && roleAusDerDatenbank.equals("Sachbearbeiter") && !adminRadio.isChecked()) {
+                    Toast.makeText(LehrVeranstaltungHS.this, "Login SUCCESSFUL", Toast.LENGTH_SHORT).show();
+                    switchActivitiesSachbearbeiter();
+                } else {
                     Toast.makeText(LehrVeranstaltungHS.this, "Login failed", Toast.LENGTH_SHORT).show();
                 }
             }
+
         });
 
 
     }
+
 
     public static String savedRoleLogin(){
     if(adminRadio.isChecked())

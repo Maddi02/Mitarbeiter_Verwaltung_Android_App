@@ -46,8 +46,7 @@ public class AdminAS extends AppCompatActivity {
                 break;
 
             case R.id.Ausloggen:
-                setContentView(R.layout.sachbearbeiter_verwaltung_hs);
-                break;
+                this.finishAffinity();
         }
 
         return super.onOptionsItemSelected(item);

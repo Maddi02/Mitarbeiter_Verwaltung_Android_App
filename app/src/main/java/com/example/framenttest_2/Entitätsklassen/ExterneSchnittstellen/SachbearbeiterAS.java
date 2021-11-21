@@ -37,8 +37,7 @@ public class SachbearbeiterAS extends AppCompatActivity {
                 replaceFragement(new AdminSacharbeiterFortbildungLöschen());
                 break;
             case R.id.Ausloggen:
-                setContentView(R.layout.sachbearbeiter_verwaltung_hs);
-                break;
+                this.finishAffinity();
         }
 
         return super.onOptionsItemSelected(item);

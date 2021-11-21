@@ -143,6 +143,24 @@ public class HilfsfunktionenK {
         return VorraussetzungeForFortbildung;
     }
 
+    public boolean checkIfNutzerExist(String username)
+    {
+        String query = "select * from SACHARBEITERVERWALTUNG where username=\""+ username + "\"";
+        Cursor cursor = database.rawQuery(query, null);
+        if(cursor.moveToFirst()) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
 
-
+    public boolean checkIfUsernameIsValid(String username)
+    {
+        if(username.length() > 0 && username.matches("[a-zA-Z]+"))
+        {
+            return true;
+        }
+        return false;
+    }
 }
