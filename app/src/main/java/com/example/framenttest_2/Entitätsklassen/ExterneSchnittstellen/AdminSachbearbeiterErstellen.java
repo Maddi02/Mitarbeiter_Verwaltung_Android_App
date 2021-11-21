@@ -45,7 +45,7 @@ public class AdminSachbearbeiterErstellen extends Fragment {
 
         view = inflater.inflate(R.layout.admin_sachbearbeiter_erstellen_aas, container, false);
         TextView username = (TextView) view.findViewById(R.id.usernameInput);
-        TextView password = (TextView) view.findViewById(R.id.password_input);
+        TextView password = (TextView) view.findViewById(R.id.passwordInput);
         Button loginButton = (Button) view.findViewById(R.id.button);
         RadioButton adminRadio = (RadioButton) view.findViewById(R.id.adminRadio);
 

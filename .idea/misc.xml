@@ -11,8 +11,8 @@
         <entry key="app/src/main/res/layout/fragment_sachbearbeiter_name_s.xml" value="0.34934497816593885" />
         <entry key="app/src/main/res/layout/fragment_second.xml" value="0.20969202898550723" />
         <entry key="app/src/main/res/layout/fragment_test.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/sacharbeiter_fortbildung_zuweisen_aas.xml" value="0.23020833333333332" />
-        <entry key="app/src/main/res/layout/sachbearbeiter_fortbildung_loeschen.xml" value="0.23020833333333332" />
+        <entry key="app/src/main/res/layout/sacharbeiter_fortbildung_zuweisen_aas.xml" value="0.3240931104398437" />
+        <entry key="app/src/main/res/layout/sachbearbeiter_fortbildung_loeschen.xml" value="0.39797818448828" />
         <entry key="app/src/main/res/layout/sachbearbeiter_name.xml" value="0.33402922755741127" />
         <entry key="app/src/main/res/layout/sachbearbeiter_name_s.xml" value="0.24003623188405798" />
         <entry key="app/src/main/res/layout/sachbearbeiter_ok_knopf.xml" value="0.11774638315468453" />
@@ -20,6 +20,8 @@
         <entry key="app/src/main/res/layout/sachbearbeiter_verwaltung_hs.xml" value="0.23020833333333332" />
         <entry key="app/src/main/res/layout/sachbearbeiters_berechtigung_s.xml" value="0.23020833333333332" />
         <entry key="app/src/main/res/layout/sachbearbeiters_password_s.xml" value="0.2635416666666667" />
+        <entry key="app/src/main/res/layout/selectfortbildung_s.xml" value="0.23541666666666666" />
+        <entry key="app/src/main/res/layout/selectuser_s.xml" value="0.23541666666666666" />
         <entry key="app/src/main/res/menu/admin_menu.xml" value="0.2635416666666667" />
         <entry key="app/src/main/res/menu/sachbearbeiter_menu.xml" value="0.23020833333333332" />
       </map>

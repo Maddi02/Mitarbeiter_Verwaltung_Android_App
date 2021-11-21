@@ -13,19 +13,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/SachbearbeiteroldName"
-            android:layout_width="wrap_content"
+        <fragment
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="old Username">
-        </TextView>
+            android:id="@+id/selectUsername"
+            android:name="com.example.framenttest_2.Entitätsklassen.ExterneSchnittstellen.SelectUsername_s">
+
+        </fragment>
 
         <Spinner
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/spinnerUsername"
-            android:layout_below="@+id/SachbearbeiteroldName"
-            ></Spinner>
+            android:textSize="14pt"
+            android:textColor="#FF8B1500"
+            android:gravity="center"
+            android:layout_below="@+id/selectUsername">
+
+        </Spinner>
 
         <fragment
             android:id="@+id/SachbearbeiterName"

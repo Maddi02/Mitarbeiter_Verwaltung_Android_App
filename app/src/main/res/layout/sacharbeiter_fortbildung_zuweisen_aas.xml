@@ -13,30 +13,33 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/SachbearbeiteroldName"
-            android:layout_width="wrap_content"
+        <fragment
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="select Username" />
+            android:id="@+id/selectUsername"
+            android:name="com.example.framenttest_2.Entitätsklassen.ExterneSchnittstellen.SelectUsername_s">
+        </fragment>
+
+
 
         <Spinner
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/spinnerUsername"
-            android:layout_below="@+id/SachbearbeiteroldName" />
+            android:layout_below="@+id/selectUsername" />
 
-        <TextView
-            android:id="@+id/SachbearbeiterFortbildung"
-            android:layout_width="wrap_content"
+        <fragment
+            android:id="@+id/selectFortbildung"
+            android:name="com.example.framenttest_2.Entitätsklassen.ExterneSchnittstellen.SelectFottbildung_s"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/spinnerUsername"
-            android:text="select Fortbildung">
-        </TextView>
+            android:layout_below="@+id/spinnerUsername" />/>
+
         <Spinner
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/spinnerFortbildung"
-            android:layout_below="@+id/SachbearbeiterFortbildung" />
+            android:layout_below="@+id/selectFortbildung" />
 
         <TextView
             android:id="@+id/allFortbildungen"
@@ -60,7 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_below="@id/SachbearbeiterFortbildung"
+            android:layout_below="@id/allFortbildungen"
             android:layout_weight="0" />
 
         <RadioGroup
