@@ -16,11 +16,15 @@ import com.example.framenttest_2.R;
 
 import java.util.List;
 
+import Anwendungsklassen.AdminSachbearbeiterLöschenK;
 import Anwendungsklassen.HilfsfunktionenK;
+import Anwendungsklassen.InitializiseDropDown;
 
 public class AdminSachbearbeiterLöschenAAS extends Fragment {
 
     HilfsfunktionenK hilfsfunktionenK = new HilfsfunktionenK(getContext());
+    AdminSachbearbeiterLöschenK adminSachbearbeiterLöschenK;
+    InitializiseDropDown initializiseDropDown;
     View view;
     String selectedUser;
 
@@ -31,9 +35,13 @@ public class AdminSachbearbeiterLöschenAAS extends Fragment {
         hilfsfunktionenK = new HilfsfunktionenK(getContext());
         hilfsfunktionenK.open();
 
+        adminSachbearbeiterLöschenK = new AdminSachbearbeiterLöschenK(getContext());
+        adminSachbearbeiterLöschenK.open();
 
+        initializiseDropDown = new InitializiseDropDown(getContext());
+        initializiseDropDown.open();
 
-        List<String> users = hilfsfunktionenK.getAllNutzer();
+        List<String> users = initializiseDropDown.getAllNutzer();
         view = inflater.inflate(R.layout.admin_sachbearbeiter_loeschen_ass, container, false);
 
         Button loginButton = (Button) view.findViewById(R.id.button);
@@ -61,7 +69,7 @@ public class AdminSachbearbeiterLöschenAAS extends Fragment {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                hilfsfunktionenK.delete(selectedUser);
+                adminSachbearbeiterLöschenK.delete(selectedUser);
                 Toast.makeText(getContext(), "You deleted: " + selectedUser,Toast.LENGTH_LONG).show();
             }
         });

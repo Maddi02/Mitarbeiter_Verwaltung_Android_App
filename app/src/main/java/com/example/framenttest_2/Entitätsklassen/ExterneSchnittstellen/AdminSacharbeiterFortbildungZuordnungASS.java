@@ -2,7 +2,6 @@ package com.example.framenttest_2.Entitätsklassen.ExterneSchnittstellen;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,19 +16,17 @@ import androidx.fragment.app.Fragment;
 
 import com.example.framenttest_2.R;
 
-import java.io.RandomAccessFile;
-import java.util.LinkedList;
 import java.util.List;
 
 import Anwendungsklassen.HilfsfunktionenK;
-import Anwendungsklassen.OpenAllFortbildungen;
-import Anwendungsklassen.OpenFortbildungenUser;
+import Anwendungsklassen.InitializiseDropDown;
+import Anwendungsklassen.SachbearbeiterSachbearbeiterFortbildungZuordnenK;
 
 public class AdminSacharbeiterFortbildungZuordnungASS extends Fragment {
 
     HilfsfunktionenK hilfsfunktionenK = new HilfsfunktionenK(getContext());
-    OpenFortbildungenUser openFortbildungenUser;
-    OpenAllFortbildungen openAllFortbildungen;
+    SachbearbeiterSachbearbeiterFortbildungZuordnenK sachbearbeiterSachbearbeiterFortbildungZuordnenK;
+    InitializiseDropDown initializiseDropDown;
     View view;
     String selectedUser;
     String selectFortbildung;
@@ -43,11 +40,11 @@ public class AdminSacharbeiterFortbildungZuordnungASS extends Fragment {
         hilfsfunktionenK = new HilfsfunktionenK(getContext());
         hilfsfunktionenK.open();
 
-        openFortbildungenUser = new OpenFortbildungenUser(getContext());
-        openFortbildungenUser.open();
+        initializiseDropDown = new InitializiseDropDown(getContext());
+        initializiseDropDown.open();
 
-        openAllFortbildungen = new OpenAllFortbildungen(getContext());
-        openAllFortbildungen.open();
+        sachbearbeiterSachbearbeiterFortbildungZuordnenK = new SachbearbeiterSachbearbeiterFortbildungZuordnenK(getContext());
+        sachbearbeiterSachbearbeiterFortbildungZuordnenK.open();
 
         Button set = (Button) view.findViewById(R.id.button);
 
@@ -55,14 +52,14 @@ public class AdminSacharbeiterFortbildungZuordnungASS extends Fragment {
         RadioButton beleget = (RadioButton) view.findViewById(R.id.belegt);
 
         Spinner spinnerUsername = (Spinner) view.findViewById(R.id.spinnerUsername);
-        List<String> user = hilfsfunktionenK.getAllNutzer();
+        List<String> user = initializiseDropDown.getAllNutzer();
         ArrayAdapter<String> adapterUsername = new ArrayAdapter<String>(getContext(),
                 android.R.layout.simple_spinner_item, user);
         adapterUsername.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerUsername.setAdapter(adapterUsername);
 
         Spinner spinnerFortbildung = (Spinner) view.findViewById(R.id.spinnerFortbildung);
-        List<String> Fortbildungen = openAllFortbildungen.getAllFortbildungen();
+        List<String> Fortbildungen = initializiseDropDown.getAllFortbildungen();
         ArrayAdapter<String> adapterFortbildung = new ArrayAdapter<>(getContext(),
                 android.R.layout.simple_spinner_item, Fortbildungen);
         adapterFortbildung.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -74,10 +71,10 @@ public class AdminSacharbeiterFortbildungZuordnungASS extends Fragment {
             public void onClick(View v) {
                 boolean success = false;
                 if (bestanden.isChecked())
-                    success = openFortbildungenUser.setFortbildungen(selectedUser, selectFortbildung, bestanden.getText().toString());
+                    success = sachbearbeiterSachbearbeiterFortbildungZuordnenK.setFortbildungen(selectedUser, selectFortbildung, bestanden.getText().toString());
 
                 if (beleget.isChecked())
-                    success = openFortbildungenUser.setFortbildungen(selectedUser, selectFortbildung, beleget.getText().toString());
+                    success = sachbearbeiterSachbearbeiterFortbildungZuordnenK.setFortbildungen(selectedUser, selectFortbildung, beleget.getText().toString());
 
 
                 if (!success) {
@@ -97,7 +94,7 @@ public class AdminSacharbeiterFortbildungZuordnungASS extends Fragment {
             public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long arg3) {
                 selectedUser = user.get(position);
                 Toast.makeText(getContext(), "You selected: " + selectedUser, Toast.LENGTH_LONG).show();
-                getString(R.id.allFortbildungen, openFortbildungenUser.getAllFortbildungenForUser(selectedUser), 0);
+                getString(R.id.allFortbildungen, hilfsfunktionenK.getAllFortbildungenForUser(selectedUser), 0);
             }
 
             @Override

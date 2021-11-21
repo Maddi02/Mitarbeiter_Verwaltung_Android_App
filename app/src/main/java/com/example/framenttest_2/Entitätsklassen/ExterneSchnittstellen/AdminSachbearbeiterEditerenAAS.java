@@ -20,14 +20,17 @@ import com.example.framenttest_2.R;
 
 import java.util.List;
 
+import Anwendungsklassen.AdminEditerenSachbeabreiterK;
+import Anwendungsklassen.AdminErstellenSachbearbeiterK;
 import Anwendungsklassen.HilfsfunktionenK;
-import Anwendungsklassen.OpenFortbildungenUser;
+import Anwendungsklassen.InitializiseDropDown;
 
 
 public class AdminSachbearbeiterEditerenAAS extends Fragment {
 
     HilfsfunktionenK hilfsfunktionenK = new HilfsfunktionenK(getContext());
-    OpenFortbildungenUser openFortbildungenUser = new OpenFortbildungenUser(getContext());
+    AdminEditerenSachbeabreiterK adminEditerenSachbeabreiterK;
+    InitializiseDropDown initializiseDropDown;
     String selectedUser;
     View view;
 
@@ -38,11 +41,16 @@ public class AdminSachbearbeiterEditerenAAS extends Fragment {
         hilfsfunktionenK = new HilfsfunktionenK(getContext());
         hilfsfunktionenK.open();
 
-        openFortbildungenUser = new OpenFortbildungenUser(getContext());
-        openFortbildungenUser.open();
+        adminEditerenSachbeabreiterK = new AdminEditerenSachbeabreiterK(getContext());
+        adminEditerenSachbeabreiterK.open();
+
+
+        initializiseDropDown = new InitializiseDropDown(getContext());
+        initializiseDropDown.open();
+
         view = inflater.inflate(R.layout.admin_sachbearbeiter_editieren_aas, container, false);
         Spinner spinner = (Spinner) view.findViewById(R.id.spinnerUsername);
-        List<String> users = hilfsfunktionenK.getAllNutzer();
+        List<String> users = initializiseDropDown.getAllNutzer();
 
         TextView username = (TextView) view.findViewById(R.id.usernameInput);
         TextView password = (TextView) view.findViewById(R.id.password_input);
@@ -83,14 +91,12 @@ public class AdminSachbearbeiterEditerenAAS extends Fragment {
                     role = "Sachbearbeiter";
                 }
                 hilfsfunktionenK.transferAnwendungsschicht(username.getText().toString() , password.getText().toString(),role);
-                openFortbildungenUser.transfere(username.getText().toString(),null,null,null,null,null,null,null,null);
-                openFortbildungenUser.update(selectedUser);
-                hilfsfunktionenK.update(selectedUser);
+                hilfsfunktionenK.transfere(username.getText().toString(),null,null,null,null,null,null,null,null);
+                adminEditerenSachbeabreiterK.updateSachbearbeiterVerwalung(selectedUser);
+                adminEditerenSachbeabreiterK.updateSachbearbeiterFortbildungUsername(selectedUser);
                 Toast.makeText(getContext(), "Update was successful :", Toast.LENGTH_LONG).show();
             }
         });
-
-
         return view;
 
     }

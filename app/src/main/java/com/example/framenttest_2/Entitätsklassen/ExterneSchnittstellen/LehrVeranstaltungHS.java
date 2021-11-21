@@ -15,11 +15,8 @@ import com.example.framenttest_2.R;
 import com.google.android.material.button.MaterialButton;
 
 import Anwendungsklassen.HilfsfunktionenK;
-import Anwendungsklassen.OpenAllFortbildungen;
-import Anwendungsklassen.OpenFortbildungenUser;
 import Datenbank.DatabaseHelperAlleFortbildungen;
 import Datenbank.DatabaseHelperSacharbeiterVerwaltung;
-import Entitätsklassen.AllFortbildungen;
 
 public class LehrVeranstaltungHS extends AppCompatActivity {
     private HilfsfunktionenK hilfsfunktionenK;
@@ -38,11 +35,7 @@ public class LehrVeranstaltungHS extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
          sacharbeiterVerwaltung = new DatabaseHelperSacharbeiterVerwaltung(this);
-         OpenAllFortbildungen openAllFortbildungen = new OpenAllFortbildungen(this);
-         openAllFortbildungen.open();
          databaseHelperAlleFortbildungen = new DatabaseHelperAlleFortbildungen(this);
-         OpenFortbildungenUser openFortbildungenUser = new OpenFortbildungenUser(this);
-         openFortbildungenUser.open();
 
         setContentView(R.layout.sachbearbeiter_verwaltung_hs);
         TextView username = (TextView) findViewById(R.id.username);
