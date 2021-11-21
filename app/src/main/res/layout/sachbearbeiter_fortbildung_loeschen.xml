@@ -52,15 +52,14 @@
             android:layout_below="@+id/allFortbildungen"/>
 
 
-
         <fragment
             android:id="@+id/SachbearbeiterOkButton"
             android:name="com.example.framenttest_2.Entitätsklassen.ExterneSchnittstellen.SachbearbeiterOKKnopfS"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/LabelFortbildungen"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_below="@id/SachbearbeiterFortbildung"
             android:layout_weight="0" />
     </RelativeLayout>
 </LinearLayout>

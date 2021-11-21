@@ -96,23 +96,23 @@ public class HilfsfunktionenK {
             if (cursor.getString(cursor.getColumnIndex("Fortbildung1")) != null)
                 alleFortbildungen = alleFortbildungen + " " + (cursor.getString(cursor.getColumnIndex("Fortbildung1")));
 
-            if (cursor.getString(cursor.getColumnIndex("Fortbildung2")) != null)
-                alleFortbildungen = alleFortbildungen + " " + (cursor.getString(cursor.getColumnIndex("Fortbildung2")));
-
-            if (cursor.getString(cursor.getColumnIndex("Fortbildung3")) != null)
-                alleFortbildungen = alleFortbildungen + " " + (cursor.getString(cursor.getColumnIndex("Fortbildung3")));
-
-            if (cursor.getString(cursor.getColumnIndex("Fortbildung4")) != null)
-                alleFortbildungen = alleFortbildungen + " " + (cursor.getString(cursor.getColumnIndex("Fortbildung4")));
-
             if (cursor.getString(cursor.getColumnIndex("Status1")) != null)
                 alleFortbildungen = alleFortbildungen + " " + (cursor.getString(cursor.getColumnIndex("Status1")));
+
+            if (cursor.getString(cursor.getColumnIndex("Fortbildung2")) != null)
+                alleFortbildungen = alleFortbildungen + " " + (cursor.getString(cursor.getColumnIndex("Fortbildung2")));
 
             if (cursor.getString(cursor.getColumnIndex("Status2")) != null)
                 alleFortbildungen = alleFortbildungen + " " + (cursor.getString(cursor.getColumnIndex("Status2")));
 
+            if (cursor.getString(cursor.getColumnIndex("Fortbildung3")) != null)
+                alleFortbildungen = alleFortbildungen + " " + (cursor.getString(cursor.getColumnIndex("Fortbildung3")));
+
             if (cursor.getString(cursor.getColumnIndex("Status3")) != null)
                 alleFortbildungen = alleFortbildungen + " " + (cursor.getString(cursor.getColumnIndex("Status3")));
+
+            if (cursor.getString(cursor.getColumnIndex("Fortbildung4")) != null)
+                alleFortbildungen = alleFortbildungen + " " + (cursor.getString(cursor.getColumnIndex("Fortbildung4")));
 
             if (cursor.getString(cursor.getColumnIndex("Status4")) != null)
                 alleFortbildungen = alleFortbildungen + " " + (cursor.getString(cursor.getColumnIndex("Status4")));

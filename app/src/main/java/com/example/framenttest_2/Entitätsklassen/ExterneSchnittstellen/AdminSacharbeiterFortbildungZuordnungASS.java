@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
@@ -95,6 +96,8 @@ public class AdminSacharbeiterFortbildungZuordnungASS extends Fragment {
                 selectedUser = user.get(position);
                 Toast.makeText(getContext(), "You selected: " + selectedUser, Toast.LENGTH_LONG).show();
                 getString(R.id.allFortbildungen, hilfsfunktionenK.getAllFortbildungenForUser(selectedUser), 0);
+                TextView textView = view.findViewById(R.id.LabelFortbildungen);
+                textView.setText("Bestandene / Belegte Fortbildungen  \n" + hilfsfunktionenK.getAllFortbildungenForUser(selectedUser).toString());
             }
 
             @Override
