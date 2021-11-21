@@ -26,7 +26,7 @@ public class SachbearbeiterAS extends AppCompatActivity {
         switch (id) {
             case R.id.SachbeabeiterEditerenButtonMenu:
                 System.out.println("Editerne");
-                replaceFragement(new SachbearbeiterSachbearbeiterEditerenAAS());
+                replaceFragement(new AdminSachbearbeiterEditerenAAS());
                 break;
 
             case R.id.SachbeabeiterFortbbildungZuordnenButtonMenu:

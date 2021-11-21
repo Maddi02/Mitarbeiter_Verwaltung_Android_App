@@ -47,6 +47,8 @@ public class HilfsfunktionenK {
 
         return this;
     }
+
+
     public Cursor gibSacharbeiter(String username)
     {
 
@@ -140,5 +142,7 @@ public class HilfsfunktionenK {
 
         return VorraussetzungeForFortbildung;
     }
+
+
 
 }

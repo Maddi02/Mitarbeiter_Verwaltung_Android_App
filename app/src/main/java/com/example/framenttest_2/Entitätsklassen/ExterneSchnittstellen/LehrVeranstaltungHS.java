@@ -23,6 +23,7 @@ public class LehrVeranstaltungHS extends AppCompatActivity {
     private String pwAusDerDatenbank;
     private String usernameAusDerDatenbank;
     private String roleAusDerDatenbank;
+    private static RadioButton adminRadio;
     DatabaseHelperAlleFortbildungen databaseHelperAlleFortbildungen;
     DatabaseHelperSacharbeiterVerwaltung sacharbeiterVerwaltung;
     @Override
@@ -41,7 +42,7 @@ public class LehrVeranstaltungHS extends AppCompatActivity {
         TextView username = (TextView) findViewById(R.id.username);
         TextView password  = (TextView) findViewById(R.id.password);
         MaterialButton loginButton =  (MaterialButton) findViewById(R.id.loginBtn);
-        RadioButton adminRadio = (RadioButton) findViewById(R.id.AdminBotton);
+         adminRadio = (RadioButton) findViewById(R.id.AdminBotton);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("Range")
@@ -83,6 +84,17 @@ public class LehrVeranstaltungHS extends AppCompatActivity {
 
 
     }
+
+    public static String savedRoleLogin(){
+    if(adminRadio.isChecked())
+    {
+        return adminRadio.getText().toString();
+    }
+    else {
+        return "Sachbearbeiter";
+    }
+    }
+
 
     private void switchActivitiesAdmin() {
         Intent switchActivityIntent = new Intent(this, AdminAS.class);

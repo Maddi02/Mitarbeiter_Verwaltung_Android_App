@@ -1,7 +1,9 @@
 package com.example.framenttest_2.Entitätsklassen.ExterneSchnittstellen;
 
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,9 +33,12 @@ public class AdminSachbearbeiterEditerenAAS extends Fragment {
     HilfsfunktionenK hilfsfunktionenK = new HilfsfunktionenK(getContext());
     AdminEditerenSachbeabreiterK adminEditerenSachbeabreiterK;
     InitializiseDropDown initializiseDropDown;
+    String role = "";
     String selectedUser;
+
     View view;
 
+    @SuppressLint("Range")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -55,9 +60,13 @@ public class AdminSachbearbeiterEditerenAAS extends Fragment {
         TextView username = (TextView) view.findViewById(R.id.usernameInput);
         TextView password = (TextView) view.findViewById(R.id.password_input);
         Button loginButton = (Button) view.findViewById(R.id.button);
+
         RadioButton adminRadio = (RadioButton) view.findViewById(R.id.adminRadio);
         RadioButton sacharbeiterRadio = (RadioButton) view.findViewById(R.id.sachbearbeiterRadio);
-
+        if(!LehrVeranstaltungHS.savedRoleLogin().equals("Admin")) {
+            adminRadio.setEnabled(false);
+            sacharbeiterRadio.setEnabled(false);
+        }
 
         ArrayAdapter<String> adapterUsername = new ArrayAdapter<String>(getContext(),
                 android.R.layout.simple_spinner_item, users);
@@ -83,13 +92,22 @@ public class AdminSachbearbeiterEditerenAAS extends Fragment {
             @Override
             public void onClick(View v) {
 
-                String role = " ";
-                if (adminRadio.isChecked()) {
-                    role = adminRadio.getText().toString();
-                }
-                if (!adminRadio.isChecked()) {
-                    role = "Sachbearbeiter";
-                }
+
+                    if (adminRadio.isChecked()) {
+                        role = adminRadio.getText().toString();
+                    }
+                    if (!adminRadio.isChecked()) {
+                        role = "Sachbearbeiter";
+                    }
+                    if(!LehrVeranstaltungHS.savedRoleLogin().equals("Admin"))
+                    {
+                        Cursor cursor = hilfsfunktionenK.gibSacharbeiter(selectedUser);
+                        if (cursor.moveToFirst()){
+                            role = cursor.getString(cursor.getColumnIndex("role"));
+                        }
+                    }
+
+
                 hilfsfunktionenK.transferAnwendungsschicht(username.getText().toString() , password.getText().toString(),role);
                 hilfsfunktionenK.transfere(username.getText().toString(),null,null,null,null,null,null,null,null);
                 adminEditerenSachbeabreiterK.updateSachbearbeiterVerwalung(selectedUser);
@@ -98,6 +116,5 @@ public class AdminSachbearbeiterEditerenAAS extends Fragment {
             }
         });
         return view;
-
     }
 }
