@@ -61,11 +61,15 @@ public class OpenAllFortbildungen {
         if(cursor.moveToFirst()){
             do{
                 VorraussetzungeForFortbildung = VorraussetzungeForFortbildung + (cursor.getString(cursor.getColumnIndex("Fortbildung")));
-                VorraussetzungeForFortbildung = VorraussetzungeForFortbildung + (cursor.getString(cursor.getColumnIndex("Vorraussetzung1")));
-                VorraussetzungeForFortbildung = VorraussetzungeForFortbildung + (cursor.getString(cursor.getColumnIndex("Vorraussetzung2")));
+                if(cursor.getString(cursor.getColumnIndex("Vorraussetzung1")) != null)
+                VorraussetzungeForFortbildung =  VorraussetzungeForFortbildung +" " + (cursor.getString(cursor.getColumnIndex("Vorraussetzung1")));
+                if(cursor.getString(cursor.getColumnIndex("Vorraussetzung2")) != null)
+                VorraussetzungeForFortbildung = VorraussetzungeForFortbildung +" " +  (cursor.getString(cursor.getColumnIndex("Vorraussetzung2")));
             }while (cursor.moveToNext());
         }
 
         return VorraussetzungeForFortbildung;
     }
+
+
 }
