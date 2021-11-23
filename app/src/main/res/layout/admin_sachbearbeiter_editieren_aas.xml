@@ -56,6 +56,15 @@
             android:layout_below="@id/SachbearbeiterPassword"
             android:layout_weight="0" />
 
+
+        <TextView
+            android:id="@+id/LabelFortbildungenEditeren"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/SachbearbeiterBerechtigungen"
+            android:layout_marginTop="1dp"
+            android:text="Belegte / Bestandene Fortbildungen" />
+
         <fragment
             android:id="@+id/SachbearbeiterOkButton"
             android:name="com.example.framenttest_2.Entitätsklassen.ExterneSchnittstellen.SachbearbeiterOKKnopfS"
@@ -63,7 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_below="@id/SachbearbeiterPassword"
+            android:layout_below="@id/LabelFortbildungenEditeren"
             android:layout_weight="0" />
     </RelativeLayout>
 
